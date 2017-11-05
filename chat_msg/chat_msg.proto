@@ -1,0 +1,19 @@
+
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "gochat.chatMsg";
+option java_outer_classname = "ChatMsg";
+
+
+package chat_msg;
+
+// Interface exported by the server.
+service Chat {
+  rpc DoChat(stream ChatMsg) returns (stream ChatMsg) {}
+}
+
+message ChatMsg {
+	string name = 1;
+  	string message = 2;
+}
